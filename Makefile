@@ -6,13 +6,13 @@
 #    By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/01 17:58:19 by shunwata          #+#    #+#              #
-#    Updated: 2025/07/01 18:07:18 by shunwata         ###   ########.fr        #
+#    Updated: 2025/07/01 20:51:46 by shunwata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = big5_machine.out
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I $(FT_PRINTF_DIR)
 
 SRC = main.c
 OBJ = $(SRC:.c=.o)
