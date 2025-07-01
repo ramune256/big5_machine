@@ -6,11 +6,12 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/01 21:19:15 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/01 21:52:22 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "libft.h"
 #include "ft_printf.h"

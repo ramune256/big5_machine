@@ -6,7 +6,7 @@
 #    By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/01 17:58:19 by shunwata          #+#    #+#              #
-#    Updated: 2025/07/01 20:57:47 by shunwata         ###   ########.fr        #
+#    Updated: 2025/07/01 21:54:13 by shunwata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ clean:
 	rm -f $(OBJ)
 	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
