@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/01 21:08:44 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/01 21:19:15 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	instruct(void)
 
 void	put_result(t_data *data)
 {
-	ft_printf("-------結果-------\n");
+	ft_printf("\n----------Result----------\n");
 	ft_printf("外向性: %d\n", data->Ex);
 	ft_printf("協調性: %d\n", data->A);
 	ft_printf("誠実性: %d\n", data->C);
@@ -94,7 +94,7 @@ int	main(void)
 	question_num = 1;
 	while ((line = get_next_line(fd)) != NULL)
 	{
-		ft_printf("--------------\n");
+		ft_printf("--------------------------\n");
 		ft_printf("問%d %s1~5で解答: ", question_num, line);
 		free(line);
 		if (scanf("%d", &input) != 1)
