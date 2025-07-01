@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/01 20:59:38 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/01 21:08:44 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	instruct(void)
 {
 	ft_printf("-------BIG5 MACHINE-------\n");
 	ft_printf("以下の50問を読んで、\n1 ：全くちがう\n2 ：ちがう\n3 ：どちらともいえない\n");
-	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n");
+	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n\n");
 }
 
 void	put_result(t_data *data)
@@ -94,7 +94,8 @@ int	main(void)
 	question_num = 1;
 	while ((line = get_next_line(fd)) != NULL)
 	{
-		ft_printf("問%d %s\n1~5で解答: ", question_num, line);
+		ft_printf("--------------\n");
+		ft_printf("問%d %s1~5で解答: ", question_num, line);
 		free(line);
 		if (scanf("%d", &input) != 1)
 			return (put_err("ERROR: scanf\n"));
