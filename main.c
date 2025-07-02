@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 20:26:49 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:30:29 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,15 @@ void	put_result(t_data *data, char *name)
 
 	ft_printf("\n----------Result----------\n");
 	ft_printf("Name: %s\n", name);
-	ft_printf("Date: %s\n\n", ctime(&whattime));
+	ft_printf("Date: %s\n", ctime(&whattime));
 
 	put_percent("外向性", data->Ex);
 	put_percent("協調性", data->A);
 	put_percent("誠実性", data->C);
 	put_percent("情動性", data->Em);
 	put_percent("開放性", data->P);
+
+	ft_printf("--------------------------\n");
 }
 
 void	postscript(void)
