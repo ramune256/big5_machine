@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 20:37:17 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:40:22 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	instruct(void)
 void	put_percent(char *type, int value)
 {
 	int	i;
-	// int	percent;
 
 	i = 0;
 	ft_printf("%s: [", type);
@@ -83,7 +82,6 @@ void	put_percent(char *type, int value)
 		ft_printf("#");
 		i++;
 	}
-	// percent = (i * 10) + (value % 5);
 	while (i < 10)
 	{
 		ft_printf(".");
@@ -113,7 +111,7 @@ void	put_result(t_data *data, char *name)
 
 void	postscript(void)
 {
-	ft_printf("\n解説: \n");
+	ft_printf("\n解説:\n");
 	ft_printf("外向性: この要素が高ければ社交的で明るく、低ければ謙虚で物静か。\n");
 	ft_printf("協調性: この要素が高ければ他人に優しく友好的で、低ければ他人に冷たく敵対的。\n");
 	ft_printf("誠実性: この要素が高ければ計画性があり責任感が強く、低ければ無計画で適当。\n");
