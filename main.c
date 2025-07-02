@@ -6,13 +6,14 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 19:46:33 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:21:52 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "libft.h"
 #include "ft_printf.h"
 
@@ -91,9 +92,15 @@ void	put_percent(char *type, int value)
 	ft_printf("] %d%%\n", value * 2);
 }
 
-void	put_result(t_data *data)
+void	put_result(t_data *data, char *name)
 {
+	time_t	whattime;
+
+	whattime = time(NULL);
+
 	ft_printf("\n----------Result----------\n");
+	ft_printf("Name: %s\n", name);
+	ft_printf("Date: %s\n\n", ctime(&whattime));
 
 	put_percent("外向性", data->Ex);
 	put_percent("協調性", data->A);
@@ -119,11 +126,17 @@ int	main(void)
 	int		fd;
 	int		input;
 	int		question_num;
+	char	name[256];
 	t_data	data = {0, 0, 0, 0, 0};
 
 	fd = open("questions.txt", O_RDONLY);
 	if (fd < 0)
 		return (1);
+
+	ft_printf("Type your name: ");
+	if (scanf("%255s", name) != 1)
+		return (put_err("ERROR: wrong format\n"));
+
 	instruct();
 	question_num = 1;
 	while ((line = get_next_line(fd)) != NULL)
@@ -148,7 +161,7 @@ int	main(void)
 		question_num++;
 	}
 	close(fd);
-	put_result(&data);
+	put_result(&data, name);
 	postscript();
 	return (0);
 }
