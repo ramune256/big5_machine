@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 20:21:52 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:26:49 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	update_data(t_data *data, int question_num, int input)
 
 void	instruct(void)
 {
-	ft_printf("-------BIG5 MACHINE-------\n");
+	ft_printf("\n-------BIG5 MACHINE-------\n");
 	ft_printf("以下の50問を読んで、\n1 ：全くちがう\n2 ：ちがう\n3 ：どちらともいえない\n");
 	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n\n");
 }
