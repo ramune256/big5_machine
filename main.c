@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 19:38:53 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:46:33 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	instruct(void)
 void	put_percent(char *type, int value)
 {
 	int	i;
-	int	percent;
+	// int	percent;
 
 	i = 0;
 	ft_printf("%s: [", type);
@@ -82,13 +82,13 @@ void	put_percent(char *type, int value)
 		ft_printf("#");
 		i++;
 	}
-	percent = i * 10;
+	// percent = (i * 10) + (value % 5);
 	while (i < 10)
 	{
 		ft_printf(".");
 		i++;
 	}
-	ft_printf("] %d%%\n", percent);
+	ft_printf("] %d%%\n", value * 2);
 }
 
 void	put_result(t_data *data)
