@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 19:12:21 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:38:53 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,17 @@ void	put_result(t_data *data)
 	put_percent("開放性", data->P);
 }
 
+void	postscript(void)
+{
+	ft_printf("\n解説: \n");
+	ft_printf("外向性: この要素が高ければ社交的で明るく、低ければ謙虚で物静か。\n");
+	ft_printf("協調性: この要素が高ければ他人に優しく友好的で、低ければ他人に冷たく敵対的。\n");
+	ft_printf("誠実性: この要素が高ければ計画性があり責任感が強く、低ければ無計画で適当。\n");
+	ft_printf("情動性: この要素が高ければ心配性で緊張しやすく、低ければ安定した精神を持っている。\n");
+	ft_printf("開放性: この要素が高ければ好奇心が高く遊び心があり、低ければ堅実的で保守的である。\n");
+	ft_printf("--------------------------\n");
+}
+
 int	main(void)
 {
 	char	*line;
@@ -138,5 +149,6 @@ int	main(void)
 	}
 	close(fd);
 	put_result(&data);
+	postscript();
 	return (0);
 }
