@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 17:28:33 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:12:21 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ void	instruct(void)
 	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n\n");
 }
 
-int	get_percent(int value)
+void	put_percent(char *type, int value)
 {
 	int	i;
 	int	percent;
 
 	i = 0;
-	ft_printf("[");
+	ft_printf("%s: [", type);
 	while (i < value / 5)
 	{
 		ft_printf("#");
@@ -88,40 +88,18 @@ int	get_percent(int value)
 		ft_printf(".");
 		i++;
 	}
-	ft_printf("]");
-	return (percent);
+	ft_printf("] %d%%\n", percent);
 }
 
 void	put_result(t_data *data)
 {
-	int	percent;
-
 	ft_printf("\n----------Result----------\n");
 
-	ft_printf("外向性: ");
-	percent = get_percent(data->Ex);
-	ft_printf(" %d%%\n", percent);
-
-	ft_printf("協調性: ");
-	percent = get_percent(data->A);
-	ft_printf(" %d%%\n", percent);
-
-	ft_printf("誠実性: ");
-	percent = get_percent(data->C);
-	ft_printf(" %d%%\n", percent);
-
-	ft_printf("情動性: ");
-	percent = get_percent(data->Em);
-	ft_printf(" %d%%\n", percent);
-
-	ft_printf("開放性: ");
-	percent = get_percent(data->P);
-	ft_printf(" %d%%\n", percent);
-
-	// ft_printf("協調性: %d\n", data->A);
-	// ft_printf("誠実性: %d\n", data->C);
-	// ft_printf("情動性: %d\n", data->Em);
-	// ft_printf("開放性: %d\n", data->P);
+	put_percent("外向性", data->Ex);
+	put_percent("協調性", data->A);
+	put_percent("誠実性", data->C);
+	put_percent("情動性", data->Em);
+	put_percent("開放性", data->P);
 }
 
 int	main(void)
