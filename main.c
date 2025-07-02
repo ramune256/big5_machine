@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 17:13:24 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:23:04 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,15 @@ int	get_percent(int value)
 
 void	put_result(t_data *data)
 {
+	int	percent;
+
 	ft_printf("\n----------Result----------\n");
-	ft_printf("外向性: %d%%\n", get_percent(data->Ex));
+
+	ft_printf("外向性: ");
+	percent = get_percent(data->Ex);
+	ft_printf(" %d%%\n", percent);
+
+
 	ft_printf("協調性: %d\n", data->A);
 	ft_printf("誠実性: %d\n", data->C);
 	ft_printf("情動性: %d\n", data->Em);
