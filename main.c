@@ -47,27 +47,27 @@ int	update_data(t_data *data, int question_num, int input)
 	if (question_num >= 1 && question_num <= 10)
 	{
 		data->Ex += input;
-		ft_printf("DEBUG: data->Ex += %d\ncurrent value is %d\n", input, data->Ex);
+		// ft_printf("DEBUG: data->Ex += %d\ncurrent value is %d\n", input, data->Ex);
 	}
 	else if (question_num >= 11 && question_num <= 20)
 	{
 		data->A += input;
-		ft_printf("DEBUG: data->A += %d\ncurrent value is %d\n", input, data->A);
+		// ft_printf("DEBUG: data->A += %d\ncurrent value is %d\n", input, data->A);
 	}
 	else if (question_num >= 21 && question_num <= 30)
 	{
 		data->C += input;
-		ft_printf("DEBUG: data->C += %d\ncurrent value is %d\n", input, data->C);
+		// ft_printf("DEBUG: data->C += %d\ncurrent value is %d\n", input, data->C);
 	}
 	else if (question_num >= 31 && question_num <= 40)
 	{
 		data->Em += input;
-		ft_printf("DEBUG: data->Em += %d\ncurrent value is %d\n", input, data->Em);
+		// ft_printf("DEBUG: data->Em += %d\ncurrent value is %d\n", input, data->Em);
 	}
 	else if (question_num >= 41 && question_num <= 50)
 	{
 		data->P += input;
-		ft_printf("DEBUG: data->P += %d\ncurrent value is %d\n", input, data->P);
+		// ft_printf("DEBUG: data->P += %d\ncurrent value is %d\n", input, data->P);
 	}
 	else
 		return (1);
@@ -153,7 +153,7 @@ int	main(void)
 		if (reverse_question(question_num))
 		{
 			input = 6 - input;
-			ft_printf("DEBUG: question_num is %d, so the input value has been reversed into %d\n", question_num, input);
+			// ft_printf("DEBUG: question_num is %d, so the input value has been reversed into %d\n", question_num, input);
 		}
 		if(update_data(&data, question_num, input) == 1)
 			return (put_err("ERROR: invaild text file\n"));
