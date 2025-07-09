@@ -6,7 +6,7 @@
 /*   By: shunwata <shunwata@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:50:15 by shunwata          #+#    #+#             */
-/*   Updated: 2025/07/02 20:40:22 by shunwata         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:26:57 by shunwata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,28 @@ int	put_err(char *message)
 {
 	ft_printf("%s\n", message);
 	return (1);
+}
+
+void	instruct(void)
+{
+	ft_printf("\n-------BIG5 MACHINE-------\n");
+	ft_printf("以下の50問を読んで、\n1 ：全くちがう\n2 ：ちがう\n3 ：どちらともいえない\n");
+	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n\n");
+}
+
+int	reverse_question(int question_num)
+{
+	int	to_reverse[16] = {2, 5, 13, 14, 17, 20, 21, 22, 25, 27, 29, 34, 40, 42, 47, -1};
+	int	i;
+
+	i = 0;
+	while (to_reverse[i] != -1)
+	{
+		if (question_num == to_reverse[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 int	update_data(t_data *data, int question_num, int input)
@@ -62,13 +84,6 @@ int	update_data(t_data *data, int question_num, int input)
 	else
 		return (1);
 	return (0);
-}
-
-void	instruct(void)
-{
-	ft_printf("\n-------BIG5 MACHINE-------\n");
-	ft_printf("以下の50問を読んで、\n1 ：全くちがう\n2 ：ちがう\n3 ：どちらともいえない\n");
-	ft_printf("4 ：そうだ\n5 ：全くそうだ\nという5点満点でそれぞれお答えください。\n\n");
 }
 
 void	put_percent(char *type, int value)
@@ -147,10 +162,7 @@ int	main(void)
 			return (put_err("ERROR: scanf\n"));
 		if (!(input >= 1 && input <= 5))
 			return (put_err("ERROR: invaild input value\n"));
-		if (question_num == 2 || question_num == 5 || question_num == 13 || question_num == 14
-				|| question_num == 17 || question_num == 20 || question_num == 21 || question_num == 22
-				|| question_num == 25 || question_num == 27 || question_num == 29 || question_num == 34
-				|| question_num == 40 || question_num == 42 || question_num == 47)
+		if (reverse_question(question_num))
 		{
 			input = 6 - input;
 			ft_printf("DEBUG: question_num is %d, so the input value has been reversed into %d\n", question_num, input);
